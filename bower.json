@@ -1,0 +1,20 @@
+{
+  "name": "angular-file-directive",
+  "version": "0.0.1",
+  "homepage": "https://github.com/vpegado/angular-file-directive",
+  "authors": [
+    "Victor Pegado <victor.pegado@kivra.com>"
+  ],
+  "description": "Angular directive for parsing files",
+  "main": "file.js",
+  "keywords": [
+    "angular",
+    "file",
+    "directive",
+    "filereader"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.0.5"
+  }
+}
