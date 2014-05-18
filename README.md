@@ -9,12 +9,13 @@ File parsing directive for Angular.js
 
 4. Insert code in to view
 
-        <input type="file" file="csvFile" accept="text/csv">
+        <!-- Bind the values to $scope.files -->
+        <input type="file" file="files" accept="image/*">
+        
+        <!-- Render the selected files directly in the view -->
+        <div ng-repeat="file in files">
+          <h4>{{ file.name }}</h4>
+          <img ng-src="data:{{ file.type }};base64,{{ file.body }}" alt="{{ file.name }}">
+        </div>
 
-5. Insert code in controller
 
-        $scope.csvFile = '';
-        $scope.items = [];
-        $scope.$watch('csvFile', function () {
-            $scope.items = $scope.csvFile.split('\n');
-        })
