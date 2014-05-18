@@ -10,7 +10,7 @@ File parsing directive for Angular.js
 4. Insert code in to view
 
         <!-- Bind the values to $scope.files -->
-        <input type="file" file="files" accept="image/*">
+        <input type="file" file="files" accept="image/*" multiple>
         
         <!-- Render the selected files directly in the view -->
         <div ng-repeat="file in files">
