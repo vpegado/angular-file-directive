@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('adminApp')
+angular.module('file', [])
   .directive('file', [function () {
     return {
       scope: {
