@@ -1,6 +1,6 @@
 {
   "name": "angular-file-directive",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/vpegado/angular-file-directive",
   "authors": [
     "Victor Pegado <victor.pegado@kivra.com>"
@@ -15,6 +15,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "angular": "~1.0.5"
+    "angular": ">=1.2.*"
   }
 }
