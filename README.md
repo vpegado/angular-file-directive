@@ -15,12 +15,12 @@ Include from a [RawGit](https://rawgit.com/)'s CDN:
 Or [download](https://github.com/vpegado/angular-file-directive/archive/master.zip) manually.
 
 ## Usage
-Application
+`app.js`
 
     angular.module('myApp', ['file']);
 
 
-View
+`view.html`
 
     <!-- Bind the values to $scope.files -->
     <input type="file"
