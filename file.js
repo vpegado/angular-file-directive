@@ -17,21 +17,24 @@ angular.module('file', [])
             var reader = new FileReader();
             reader.file = file;
             reader.onload = function (e) {
-              var data = e.target.result;
+              var body = e.target.result;
               // Base64 Encode file of type other than 'text'
               if (!isText) {
-                data = btoa(data);
+                body = btoa(body);
               }
               // Compile data from file
               files.push({
+                updatedAt: file.lastModifiedDate.toJSON(),
+                size: file.size,
                 type: file.type,
                 name: file.name,
-                body: data
+                body: body
               });
               // Apply new values to $scope when the last file is done.
               if (files.length === changeEvent.target.files.length) {
                 scope.$apply(function () {
                   scope.file = files;
+                  console.log(files);
                 });
               }
             };
