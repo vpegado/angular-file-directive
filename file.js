@@ -34,7 +34,6 @@ angular.module('file', [])
               if (files.length === changeEvent.target.files.length) {
                 scope.$apply(function () {
                   scope.file = files;
-                  console.log(files);
                 });
               }
             };
