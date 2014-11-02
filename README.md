@@ -4,33 +4,36 @@ angular-file-directive
 File parsing directive for AngularJS
 
 ## Installation
+
 Install with [Bower](http://bower.io/):
-
-    $ bower install angular-file-directive
-    
-Include from a [RawGit](https://rawgit.com/)'s CDN:
-
-    <script src="//cdn.rawgit.com/vpegado/angular-file-directive/v1.1.0/file.js"></script>
-    
-Or [download](https://github.com/vpegado/angular-file-directive/archive/master.zip) manually.
+```bash
+$ bower install angular-file-directiv
+```
 
 ## Usage
-`app.js`
 
-    angular.module('myApp', ['file']);
+Include the library:
+```html
+<script src="/bower_components/angular-file-directive/angular-file-directive.js"></script>
+```
 
+Import it to the angular applicaiton:
+```javascript
+angular.module('myApp', ['ngFile']);
+```
 
-`view.html`
+Use it in the view:
+```html
+<!-- Bind the values to $scope.files -->
+<input  type="file"
+        file="files"
+        accept="image/*"
+        multiple>
 
-    <!-- Bind the values to $scope.files -->
-    <input type="file"
-      file="files"
-      accept="image/*"
-      multiple>
-    
-    <!-- Render the selected files directly in the view -->
-    <div ng-repeat="file in files">
-      <h4>{{ file.name }}</h4>
-      <img alt="{{ file.name }}"
+<!-- Render the selected files directly in the view -->
+<div ng-repeat="file in files">
+  <h4>{{ file.name }}</h4>
+  <img  alt="{{ file.name }}"
         ng-src="data:{{ file.type }};base64,{{ file.body }}">
-    </div>
+</div>
+```

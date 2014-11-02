@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Example</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../angular-file-directive.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="fileApp" ng-controller="FileCtrl">
+    <h1>Example</h1>
+
+    <!-- Bind the values to $scope.files -->
+    <input  type="file"
+            file="files"
+            accept="image/*"
+            multiple>
+
+    <!-- Render the selected files directly in the view -->
+    <div ng-repeat="file in files">
+      <h4>{{ file.name }}</h4>
+      <img  alt="{{ file.name }}"
+            ng-src="data:{{ file.type }};base64,{{ file.body }}">
+      <pre>{{ file | json }}</pre>
+    </div>
+
+
+  </body>
+</html>

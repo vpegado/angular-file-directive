@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('file', [])
+angular.module('ngFile', [])
   .directive('file', [function () {
     return {
       scope: {
