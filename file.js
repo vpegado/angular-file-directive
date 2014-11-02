@@ -28,7 +28,8 @@ angular.module('file', [])
                 size: file.size,
                 type: file.type,
                 name: file.name,
-                body: body
+                body: body,
+                file : file
               });
               // Apply new values to $scope when the last file is done.
               if (files.length === changeEvent.target.files.length) {
