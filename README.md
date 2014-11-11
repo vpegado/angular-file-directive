@@ -7,7 +7,7 @@ File parsing directive for AngularJS
 
 Install with [Bower](http://bower.io/):
 ```bash
-$ bower install angular-file-directiv
+$ bower install angular-file-directive
 ```
 
 ## Usage
