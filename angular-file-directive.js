@@ -20,7 +20,13 @@ angular.module('ngFile', [])
               var body = e.target.result;
               // Base64 Encode file of type other than 'text'
               if (!isText) {
-                body = btoa(body);
+                var binary = "";
+                var bytes = new Uint8Array(body);
+                var length = bytes.byteLength;
+                for (var i = 0; i < length; i++) {
+                  binary += String.fromCharCode(bytes[i]);
+                }
+                body = btoa(binary);
               }
               // Compile data from file
               files.push({
@@ -42,7 +48,7 @@ angular.module('ngFile', [])
             if (isText) {
               reader.readAsText(file);
             } else {
-              reader.readAsBinaryString(file);
+              reader.readAsArrayBuffer(file);
             }
           });
         });
