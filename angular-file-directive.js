@@ -7,6 +7,15 @@ angular.module('ngFile', [])
         file: '='
       },
       link: function (scope, elem) {
+        function getFileModifiedDate (file) {
+          if (file.lastModifiedDate) {
+            return file.lastModifiedDate.toJSON();
+          }
+          else if (file.lastModified) {
+            return new Date(file.lastModified).toJSON();
+          }
+          return new Date().toJSON();
+        }
         // Listen for change in the input element
         elem.bind('change', function (changeEvent) {
           var files = [];
@@ -30,7 +39,7 @@ angular.module('ngFile', [])
               }
               // Compile data from file
               files.push({
-                updatedAt: file.lastModifiedDate.toJSON(),
+                updatedAt: getFileModifiedDate(file),
                 size: file.size,
                 type: file.type,
                 name: file.name,
